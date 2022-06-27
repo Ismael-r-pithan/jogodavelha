@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    background-color: rgb(33, 0, 54);
+    color: darkmagenta;
+}
+
+p {
+    color: darkred;
+}
+
+main {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+#app {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    min-height: calc(100vh - 400px);
+}
+
+.tabuleiro {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 6px;
+    background-image: url('/images/jogodavelha.png');
+}
+
+.tabuleiro button {
+    border: 0;
+    background-color: transparent;
+    padding: 10px;
+    height: 96px;
+    width: 96px;
+    font-size: 58px;
+    outline: none;
+}
+
+.tabuleiro button.cellX {
+    color: darkred;
+}
+
+.tabuleiro button.cellO {
+    color: darkmagenta;
+}
+
+.register {
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.register input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5rem;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+button.btn {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5rem;
+    border: none;
+    background-color: black;
+    color: red;
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+#app p {
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># Jogo da Velha #</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <div id="app">
+                <h3 v-if="jogo">
+                    <strong>{{jogo._jogador1._nome}}</strong>
+                    <strong>&nbsp;&nbsp;&nbsp; Versus &nbsp;&nbsp;&nbsp;</strong> 
+                    <strong>{{jogo._jogador2._nome}}</strong>
+                </h3>
+                <p>{{mensagem}}</p>
+
+
+            <div class="jogo" v-if="jogo">
+                <div class="tabuleiro">
+                    <button v-for="cell in jogo._tabuleiro._casa" @click="makeMove(cell)"
+                        :class="{'cellX': cell.simbolo == 'X', 'cellO': cell.simbolo == 'O' }">
+                        {{cell.simbolo}}
+                    </button>
+                </div>
+                <button @click="resetJogo()" class="btn" v-if="jogo._fimDeJogo">mais uma ??</button>
+            </div>
+
+            <div class="register" v-if="!jogo && !blockRegister">
+                <input type="text" v-model="nomeJogador" placeholder="Digite seu nome jovem padawan...">
+                <button @click="startJogo()" class="btn">Que Comecem os Jogos</button>
+            </div>
+        </div>
+    </main>
+    <script src="/vendor/socket.io-client/dist/socket.io.js"></script>
+    <script src="/vendor/vue/dist/vue.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

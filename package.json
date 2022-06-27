@@ -1,0 +1,16 @@
+{
+  "name": "jogodavelha",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ismael",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "vue": "^2.6.11"
+  }
+}
