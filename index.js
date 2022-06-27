@@ -3,19 +3,21 @@ import express from "express";
 import socketIo from "socket.io";
 import Jogador from "./src/model/Jogador.js";
 import Jogo from "./src/model/Jogo.js";
-
+import ip from 'ip';
 import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config({
+    path: process.env.NODE_ENV === "development" ? ".env.dev" : ".env.prod"
+})
 
 const port = process.env.PORT || 3000
-
 const app = express();
 
-const server = http.Server(app).listen(port);
+const server = process.env.NODE_ENV === "development" ? http.Server(app).listen(port, ip.address()) :  http.Server(app).listen(port);
 const io = socketIo(server);
 const jogadores = {};
 
+console.log(`porta: ${port} ----- ip: ${ip.address()}`);
 app.use(express.static("./public"));
 app.use("/vendor", express.static("./node_modules"));
 

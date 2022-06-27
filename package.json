@@ -4,7 +4,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production& node index.js"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development node index.js"
   },
   "author": "ismael",
   "license": "MIT",
@@ -12,6 +13,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
+    "ip": "^1.1.8",
     "socket.io": "^2.3.0",
     "vue": "^2.6.11"
   }
