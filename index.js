@@ -4,9 +4,15 @@ import socketIo from "socket.io";
 import Jogador from "./src/model/Jogador.js";
 import Jogo from "./src/model/Jogo.js";
 
+import dotenv from 'dotenv';
+
+dotenv.config()
+
+const port = process.env.PORT || 3000
+
 const app = express();
 
-const server = http.Server(app).listen(3000);
+const server = http.Server(app).listen(port);
 const io = socketIo(server);
 const jogadores = {};
 
